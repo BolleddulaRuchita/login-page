@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Enter user Details</label>
+        <input  type="text" id="i1" placeholder="username" >
+        <input type="text" id="i2" placeholder="password" >
+        <input type="text" id="i3" placeholder="conform password" >
+        <input type="text" id="i4" placeholder="contact number" >
+    </form>
+    <script>
+       var username=document.getElementById(i1)
+       var password=document.getElementById(i2)
+       var conform_password = document.getElementById(i3)
+       var number=document.getElementById(i4)
+       var button=document.createElement("button")
+       button.innerText="Login"
+       document.body.append(button)
+       var in1=document.getElementById("i1")
+       var in2=document.getElementById("i2")
+       var in3=document.getElementById("i3")
+       var in4=document.getElementById("i4")
+      button.addEventListener("click",f)
+    
+        var ar=JSON.parse(localStorage.getItem("array"))
+       console.log(ar);
+        console.log(ar[0]["username"],ar[0]["password"]);
+       
+      function f(){
+        var arr=[]
+        var obj={
+            username:in1.value,
+            password:in2.value
+        }
+        console.log(obj.username,obj.password);
+      arr.push(obj)
+    if(arr.length>0){
+        for(i in ar){
+            for(j in i){
+        if(obj.username==ar[i]["username"] && obj.password==ar[i]["password"]){
+           // window.open("wa.html","_self")
+           document.write("login successful")
+        }
+        else{
+            document.write("please enter valid details")
+        }
+    }
+    }
+    }
+      else{
+            document.write("please  register")
+        }
+    }
+      
+    </script>
+</body>
+</html>

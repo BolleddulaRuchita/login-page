@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>register</h1>
+        <form id="a" action="" > <input id="user" type="text" placeholder="username" >
+        <input type="text" id="pass" placeholder="password"> 
+        </form>
+        <button id="reg">login</button>
+    </center>
+    <script>
+    var bu= document.getElementsByTagName("button")
+    var ar=[]
+    bu[0].addEventListener("click",f)
+    function f(){
+        var u1=document.getElementById("user")
+        var p1=document.getElementById("pass")
+       var obj={
+            username:u1.value,
+            password:p1.value
+        }
+        ar.push(obj)
+        // if(!(ar.includes(obj)) ){
+      
+        // }
+        // else{
+        //     alert("user already exits")
+        // }
+        console.log(ar);
+        localStorage.setItem("array",JSON.stringify(ar))
+  window.open("n.html","_self")
+    }
+   
+    </script>
+</body>
+</html>
